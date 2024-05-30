@@ -1,2 +1,3 @@
-# tancap-app
-Our Bangkit Academy Capstone Project, Tancap: Tangan Berucap. An app translating sign language into speech and text.
+# Tancap 
+${{\color{Goldenrod}{\textsf{ Tangan Berucap \}}}}\$ 
+> Our Bangkit Academy Capstone Project. An app translating sign language into speech and text.
