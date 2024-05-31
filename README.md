@@ -8,7 +8,7 @@ Captone ID: `C241-PS286`
 ## Member
 | Role |            Name           |    Bangkit ID   |             Email            |
 |:----:|:-------------------------:|:---------------:|:----------------------------:|
-| MD   | [Hikam Rizqillah Munandar](https://www./linkedin.com/in/hikamrizqillah/)  | `A550D4NY4613`  |                              |
+| MD   | [Hikam Rizqillah Munandar](https://www./linkedin.com/in/hikamrizqillah/)  | `A550D4NY4613`  | hiltikazamak@gmail.com                             |
 | MD   | [Muhammad Iqbal Trikiswoyo](https://www./linkedin.com/in/muhammad-iqbal-trikiswoyo-607827250/) | `A550D4NY4621`  | Muhammadiqbal.trikiswoyo@Gmail.com                             |
 | CC   | [Daffa Noviansya](https://www./linkedin.com/in/daffa-nofiansyah/)          | `C001D4KY0053`  | daffanofiansyah131@gmail.com |
 | CC   | [Fauzan Auila](https://www./linkedin.com/in/fauzan-auliaa/)              | `C315D4KY1332`  | fauzanalang7@gmail.com                             |
