@@ -19,3 +19,9 @@ Captone ID: `C241-PS286`
 ## Data
 * `ASL`: https://universe.roboflow.com/david-lee-d0rhs/american-sign-language-letters
 * `WASL`: https://github.com/dxli94/WLASL
+
+## Mentor
+| Advisor ID | Name of Advisor |          Expertise         |      Email Address      |
+|:----------:|:---------------:|:--------------------------:|:-----------------------:|
+| ML24-0140  | Anthony Jaya    | Machine Learning           | thonyaya@gmail.com      |
+| B24-0358   | Ardhi Widjaya   | Business/Commerce/Ideation | ardhi8widjaya@gmail.com |
