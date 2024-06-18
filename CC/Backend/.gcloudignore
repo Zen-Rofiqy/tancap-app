@@ -1,0 +1,18 @@
+# Ignore the node_modules directory
+node_modules/
+
+# Ignore configuration files with sensitive information (if you're not using app.yaml for env variables)
+.env
+
+# Ignore build artifacts and temporary files
+dist/
+build/
+*.log
+
+# Ignore files related to version control
+.git
+.gitignore
+
+# Ignore IDE configuration files
+.idea/
+.vscode/
