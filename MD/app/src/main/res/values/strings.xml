@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">TANCAP</string>
-    <string name="welcome_title">Selamat datang di Tancap!</string>
+    <string name="welcome_title">Selamat Datang!</string>
     <string name="welcome_message">Mari belajar berkomunikasi dengan bahasa isyarat!</string>
 
     <string name="register_title">Daftar dulu</string>
@@ -35,4 +35,26 @@
 
     <string name="password_error">Password tidak boleh kurang dari 8 karakter</string>
     <string name="retry">Coba Lagi</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_feed">News</string>
+    <string name="detected_text">Detected Text</string>
+    <string name="news_image">news image</string>
+    <string name="title_catalog">Catalog</string>
+    <string name="change_theme">Change Theme</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash_screen">Splash Screen</string>
+    <string name="title_onBoarding1">TANGAN BERUCAP</string>
+    <string name="title_onBoarding2">Real-Time Detection</string>
+    <string name="title_onBoarding3">Stay Informed</string>
+    <string name="title_onBoarding4">Expand Your Vocabulary</string>
+    <string name="desc_onBoarding1">Tancap recognizes and translates your handsigns into text or speech</string>
+    <string name="desc_onBoarding2">Tancap recognizes and translates your handsigns into text or speech</string>
+    <string name="desc_onBoarding3">Access news and stories relevant to the deaf and mute community</string>
+    <string name="desc_onBoarding4">Explore our comprehensive catalogue of handsigns and their meanings</string>
+    <string name="next">Next</string>
+    <string name="finish">Let\'s get started</string>
+
+
 </resources>

@@ -5,7 +5,13 @@
     android:id="@+id/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorOnPrimary"
     tools:context="com.hikam.tancap.ui.WelcomeActivity">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -29,7 +35,7 @@
         android:alpha="0"
         android:gravity="center"
         android:text="@string/welcome_title"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +53,7 @@
         android:layout_marginEnd="32dp"
         android:alpha="0"
         android:text="@string/welcome_message"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         android:textSize="15sp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,8 +70,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:alpha="0"
-        android:backgroundTint="@color/hijau"
-        android:textColor="@color/black"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
         android:text="@string/sign_in"
         app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,8 +86,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:alpha="0"
-        android:backgroundTint="@color/hijau"
-        android:textColor="@color/black"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guidelineVertical"

@@ -1,7 +1,22 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Tancap" parent="Theme.Material3.DayNight">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+<resources>
+    <!-- Base application theme -->
+    <style name="Theme.Tancap" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryVariantColor</item>
+        <item name="colorOnPrimary">@color/onPrimaryColorDark</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryColor</item>
+        <item name="colorOnSecondary">@color/onSecondaryColorDark</item>
+        <!-- Background color. -->
+        <item name="android:colorBackground">@color/backgroundColorDark</item>
+        <item name="colorOnBackground">@color/onBackgroundColorDark</item>
+        <!-- Surface color. -->
+        <item name="colorSurface">@color/surfaceColorDark</item>
+        <item name="colorOnSurface">@color/onSurfaceColorDark</item>
+        <!-- Error color. -->
+        <item name="colorError">@color/errorColorDark</item>
+        <item name="colorOnError">@color/onPrimaryColorDark</item>
     </style>
 </resources>

@@ -3,9 +3,9 @@ package com.hikam.tancap.ui
 import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,12 +14,13 @@ import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.hikam.tancap.viewmodel.ViewModelFactory
 import com.hikam.tancap.data.ResultState
-import com.hikam.tancap.userpref.UserModel
 import com.hikam.tancap.databinding.ActivityLoginBinding
+import com.hikam.tancap.userpref.UserModel
 import com.hikam.tancap.viewmodel.LoginViewModel
+import com.hikam.tancap.viewmodel.ViewModelFactory
 import kotlinx.coroutines.launch
 
 class LoginActivity : AppCompatActivity() {
@@ -30,7 +31,6 @@ class LoginActivity : AppCompatActivity() {
     private val viewModel by viewModels<LoginViewModel> {
         ViewModelFactory.getInstance(this)
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,8 +43,6 @@ class LoginActivity : AppCompatActivity() {
 
         emailInputView = binding.emailEditText
         customEditText = binding.passwordEditText
-
-
     }
 
     private fun setupView() {
@@ -59,8 +57,6 @@ class LoginActivity : AppCompatActivity() {
         }
         supportActionBar?.hide()
     }
-
-
 
     private fun playAnimation() {
         val rotateAnimator = ObjectAnimator.ofFloat(binding.imageView, View.ROTATION, 0f, 360f).apply {
@@ -93,7 +89,6 @@ class LoginActivity : AppCompatActivity() {
             duration = 1000
         }
 
-
         AnimatorSet().apply {
             playSequentially(rotateAnimator)
             playTogether(fadeAnimators as Collection<Animator>?)
@@ -104,14 +99,20 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-
     private fun setupAction() {
         binding.loginButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()
             val password = binding.passwordEditText.text.toString()
 
-            viewModel.login(email,password).observe(this){user->
-                when(user){
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Email and Password are required", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            Log.d("LoginActivity", "Attempting login with email: $email and password: $password")
+
+            viewModel.login(email, password).observe(this) { user ->
+                when (user) {
                     is ResultState.Success -> {
                         binding.progressBar.visibility = View.INVISIBLE
                         AlertDialog.Builder(this).apply {
@@ -120,40 +121,44 @@ class LoginActivity : AppCompatActivity() {
                             setPositiveButton("Lanjut") { _, _ ->
                                 saveSession(
                                     UserModel(
-                                        user.data.loginResult.token,
-                                        user.data.loginResult.name,
-                                        user.data.loginResult.userId,
+                                        user.data.token,
+                                        email,
+                                        password,
                                         true
+
                                     )
                                 )
                             }
-                            Log.e("login",user.data.loginResult.token)
                             create()
                             show()
                         }
                     }
-                    is ResultState.Loading ->{
+                    is ResultState.Loading -> {
                         binding.progressBar.visibility = View.VISIBLE
                     }
-                    is ResultState.Error ->{
+                    is ResultState.Error -> {
                         binding.progressBar.visibility = View.INVISIBLE
-                        val error = user.error
+                        val error = user.error ?: "An unknown error occurred"
                         Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+                        Log.e("LoginActivity", "Login failed with error: $error")
                     }
                 }
             }
         }
     }
 
-    private fun saveSession(session: UserModel){
+    private fun saveSession(session: UserModel) {
         lifecycleScope.launch {
             viewModel.saveSession(session)
+            val sharedPref = getSharedPreferences("userSession", Context.MODE_PRIVATE)
+            val editor = sharedPref.edit()
+            editor.putBoolean("isLoggedIn", true)
+            editor.apply()
+
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
             ViewModelFactory.clearInstance()
             startActivity(intent)
         }
     }
-
-
 }

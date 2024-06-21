@@ -2,10 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/mode"
+        android:icon="@drawable/ic_mode"
+        android:title="@string/change_theme"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/logout"
         android:icon="@drawable/ic_logout"
         android:title="@string/sign_out"
         android:contentDescription="@string/logout_button"
         app:showAsAction="ifRoom"/>
-
 </menu>

@@ -4,11 +4,11 @@ import androidx.lifecycle.ViewModel
 import com.hikam.tancap.data.UserDataRepository
 import com.hikam.tancap.userpref.UserModel
 
-class LoginViewModel(private val repository: UserDataRepository): ViewModel() {
+class LoginViewModel(private val repository: UserDataRepository) : ViewModel() {
 
-    fun login(email: String, password: String) = repository.login(email,password)
+    fun login(email: String, password: String) = repository.login(email, password)
 
-    suspend fun saveSession(userModel: UserModel){
+    suspend fun saveSession(userModel: UserModel) {
         repository.saveSession(userModel)
     }
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorOnPrimary"
     tools:context="com.hikam.tancap.ui.RegisterActivity">
 
     <ProgressBar
@@ -39,7 +40,7 @@
         android:layout_marginEnd="32dp"
         android:alpha="0"
         android:text="@string/register_title"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"
@@ -57,7 +58,7 @@
         android:layout_marginTop="8dp"
         android:alpha="0"
         android:text="@string/username"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView"
         tools:alpha="100" />
@@ -92,7 +93,7 @@
         android:layout_marginTop="16dp"
         android:alpha="0"
         android:text="@string/email_label"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameEditTextLayout"
         tools:alpha="100" />
@@ -126,7 +127,7 @@
         android:layout_marginTop="8dp"
         android:alpha="0"
         android:text="@string/password_label"
-        android:textColor="@color/black"
+        android:textColor="?attr/colorOnBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout"
         tools:alpha="100" />
@@ -162,7 +163,8 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:alpha="0"
-        android:backgroundTint="@color/hijau"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

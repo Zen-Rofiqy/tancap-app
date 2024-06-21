@@ -58,6 +58,8 @@ dependencies {
     implementation(libs.androidx.camera.camera2)
     implementation(libs.androidx.camera.lifecycle)
     implementation(libs.androidx.camera.view)
+    implementation(libs.camera.extensions)
+
 
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
@@ -83,5 +85,9 @@ dependencies {
     implementation(libs.camera.camera2)
     implementation(libs.camera.lifecycle)
     implementation(libs.camera.view)
+
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation("androidx.core:core-splashscreen:1.0.0")
 
 }

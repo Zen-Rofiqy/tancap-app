@@ -3,6 +3,7 @@ package com.hikam.tancap.ui
 import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -10,9 +11,9 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import com.hikam.tancap.ui.RegisterActivity
+import com.hikam.tancap.R
 import com.hikam.tancap.databinding.ActivityWelcomeBinding
-
+import com.hikam.tancap.ui.onboarding.OnBoardingActivity
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
@@ -21,6 +22,11 @@ class WelcomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if (!onBoardingFinished()) {
+            startActivity(Intent(this, OnBoardingActivity::class.java))
+            finish()
+        }
 
         setupView()
         setupAction()
@@ -92,5 +98,10 @@ class WelcomeActivity : AppCompatActivity() {
             startDelay = 100
             start()
         }
+    }
+
+    private fun onBoardingFinished(): Boolean {
+        val sharedPref = getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
+        return sharedPref.getBoolean("Finished", false)
     }
 }
