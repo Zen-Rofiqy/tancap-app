@@ -1,0 +1,29 @@
+runtime: nodejs20 # or your Node.js version
+# service: backend
+
+env_variables:
+
+  GCS_BUCKET_NAME: "tancap-bucket"
+  JWT_SECRET: "E5uwQWuQRhLazoM295mA+8KJXsdFyGLBQceRbmA04kI="
+  PORT: 8080
+
+handlers:
+- url: /api/.*
+  script: auto
+
+- url: /
+  static_files: src/index.html
+  upload: src/index.html
+
+- url: /(.*\.(css|js|png|jpg|gif))
+  static_files: src/\1
+  upload: src/.*\.(css|js|png|jpg|gif)
+
+# - url: /about
+#   static_files: src/about.html
+#   upload: src/about.html
+
+# - url: /news
+#   static_files: src/news.html
+#   upload: src/news.html
+
