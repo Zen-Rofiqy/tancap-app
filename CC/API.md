@@ -12,7 +12,7 @@ Registers a new user.
 ### Request
 
 ```http
-  POST /register
+  POST /api/register
 ```
 
 | Parameter | Type     | Description                |
@@ -50,7 +50,7 @@ Authenticates a user and returns a JWT.
 ### Request
 
 ```http
-  POST /login
+  POST /api/login
 ```
 
 | Parameter | Type     | Description                       |
@@ -78,7 +78,18 @@ Authenticates a user and returns a JWT.
 Logs out the user. (Client-side: Please remove the stored JWT)
 
 ```http
-  POST /logout
+  POST /api/logout
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `-` | `-` | - |
+
+## Catalogue
+Get catalogue of handsign images and their meanings
+
+```http
+  GET /api/catalog
 ```
 
 | Parameter | Type     | Description                       |
